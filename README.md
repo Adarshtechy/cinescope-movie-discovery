@@ -45,11 +45,11 @@ cinescope-movie-discovery/
        ```bash
        git clone https://github.com/Adarshtechy/cinescope-movie-discovery.git
        ```
-    2. Navigate to the project directory
+### 2. Navigate to the project directory
        ```bash
        cd cinescope-movie-discovery
        ```
-    3. Run the app
+### 3. Run the app
        - Open index.html in your browser
 
     
