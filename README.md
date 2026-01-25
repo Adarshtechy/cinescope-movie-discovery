@@ -41,15 +41,15 @@ cinescope-movie-discovery/
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
-       
-       git clone https://github.com/Adarshtechy/cinescope-movie-discovery.git
-       
-### 2. Navigate to the project directory
-       
-       cd cinescope-movie-discovery
-       
-### 3. Run the app
-       Open index.html in your browser
+1. Clone the repository
+   ```bash    
+   git clone https://github.com/Adarshtechy/cinescope-movie-discovery.git
+   ```
+2. Navigate to the project directory
+   ```bash    
+   cd cinescope-movie-discovery
+   ```    
+3. Run the app
+   - Open index.html in your browser
 
     
