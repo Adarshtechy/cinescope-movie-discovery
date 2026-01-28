@@ -50,6 +50,6 @@ cinescope-movie-discovery/
    cd cinescope-movie-discovery
    ```    
 3. Run the app
-   . Open index.html in your browser
+   - Open index.html in your browser
 
     
