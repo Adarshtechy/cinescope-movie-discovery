@@ -2,6 +2,7 @@
 
 CineScope is a modern movie discovery web application that helps users explore popular and top-rated movies, search for films, and view detailed information through an interactive quick-view modal. The app uses real-time data from The Movie Database (TMDb) API and focuses on clean UI, performance, and accessibility.
 
+---
 
 ## ✨ Features
 
