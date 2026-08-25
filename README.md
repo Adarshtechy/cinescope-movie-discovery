@@ -134,6 +134,6 @@ CineScope uses the TMDb API to retrieve movie information.
 
 You can create an account and request an API key from:
 
-TMDb(https://www.themoviedb.org/)
+TMDb{https://www.themoviedb.org/}
 
 After obtaining your key, add it to script.js.
