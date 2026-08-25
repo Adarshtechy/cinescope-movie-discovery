@@ -1,218 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScope - Movie Discovery</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>CineScope | Movie Discovery</title>
-  </head>
-  <body>
-    <div class="app-container">
-      <!-- Sticky Navigation -->
-      <nav class="navbar">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
         <div class="nav-container">
-          <div class="logo">
-            <i class="fas fa-film"></i>
-            <h1>CineScope</h1>
-            <span class="tagline">Should I watch it?</span>
-          </div>
+            <a href="#" class="logo">
+                <i class="fa-solid fa-film"></i>
+                <span>CineScope</span>
+            </a>
 
-          <form id="form" class="search-container">
-            <div class="search-box">
-              <i class="fas fa-search search-icon"></i>
-              <input type="text" placeholder="Search for movies..." id="search" class="search" autocomplete="off">
-              <button type="button" class="clear-search" id="clear-search" aria-label="Clear search">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-            <button type="submit" class="search-btn">
-              <span>Search</span>
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </form>
+            <form class="search-form" id="form">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search" class="search" placeholder="Search movies..." autocomplete="off">
+                    <button type="button" id="clear-search" class="clear-search" aria-label="Clear search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
 
-          <div class="nav-links">
-            <button class="nav-btn" id="trending-btn" type="button">
-              <i class="fas fa-fire"></i>
-              <span>Trending</span>
-            </button>
-            <button class="nav-btn" id="top-rated-btn" type="button">
-              <i class="fas fa-star"></i>
-              <span>Top Rated</span>
-            </button>
-          </div>
+                <button type="submit" class="search-btn">
+                    Search
+                </button>
+            </form>
+
+            <nav class="nav-links">
+                <button type="button" class="nav-btn active" id="trending-btn">
+                    Trending
+                </button>
+
+                <button type="button" class="nav-btn" id="top-rated-btn">
+                    Top Rated
+                </button>
+            </nav>
         </div>
-      </nav>
+    </header>
 
-      <!-- Main Content -->
-      <main id="main">
-        <div class="hero-section">
-          <div class="hero-content">
-            <h2 class="hero-title">Discover Your Next Favorite Movie</h2>
-            <p class="hero-subtitle">Browse thousands of movies with ratings, reviews, and recommendations</p>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <i class="fas fa-database"></i>
-              <span>500K+ Movies</span>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-label">MOVIE DISCOVERY</span>
+                <h1>
+                    Find your next
+                    <span>favorite movie.</span>
+                </h1>
+                <p>
+                    Explore popular and highly-rated movies using data from TMDb.
+                </p>
             </div>
-            <div class="stat">
-              <i class="fas fa-users"></i>
-              <span>Millions of Ratings</span>
+        </section>
+
+
+        <!-- Movies -->
+        <section class="movies-section">
+            <div class="section-header">
+                <div>
+                    <span class="section-label">EXPLORE</span>
+                    <h2 id="section-title">Popular Movies</h2>
+                </div>
             </div>
-            <div class="stat">
-              <i class="fas fa-globe"></i>
-              <span>Global Database</span>
+
+            <!-- Loading -->
+            <div id="loading-skeleton" class="movies-grid">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
             </div>
-          </div>
+
+            <!-- Movies -->
+            <div id="movies-container" class="movies-grid"></div>
+
+
+            <!-- Empty -->
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fa-solid fa-film"></i>
+                <h3>No movies found</h3>
+                <p>
+                    Try searching for another movie.
+                </p>
+                <button type="button" id="show-popular" class="primary-btn">
+                    Browse Popular Movies
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-film"></i>
+                    <span>CineScope</span>
+                </a>
+                <p>
+                    A simple movie discovery app built with JavaScript and TMDb API.
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p>
+                    Powered by
+                    <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">
+                        TMDb
+                    </a>
+                </p>
+            </div>
         </div>
 
-        <div class="content-wrapper">
-          <div class="section-header">
-            <h3 id="section-title">Popular Movies</h3>
-            <div class="view-toggle">
-              <button class="view-btn active" id="grid-view" aria-label="Grid view" type="button">
-                <i class="fas fa-th"></i>
-              </button>
-              <button class="view-btn" id="list-view" aria-label="List view" type="button">
-                <i class="fas fa-list"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Loading Skeleton -->
-          <div id="loading-skeleton" class="movies-grid">
-            <!-- Skeleton cards will be generated by JS -->
-          </div>
-
-          <!-- Movies Grid -->
-          <div id="movies-container" class="movies-grid"></div>
-
-          <!-- Empty State -->
-          <div id="empty-state" class="empty-state hidden">
-            <i class="fas fa-film"></i>
-            <h3>No movies found</h3>
-            <p>Try searching for a different movie or browse our popular selections</p>
-            <button class="btn-primary" id="show-popular" type="button">Show Popular Movies</button>
-          </div>
-        </div>
-      </main>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <i class="fas fa-film"></i>
-            <h3>CineScope</h3>
-            <p>Your personal movie discovery platform</p>
-          </div>
-
-          <div class="footer-disclaimer">
-            <p>
-              <i class="fas fa-info-circle"></i>
-              This product uses the TMDb API but is not endorsed or certified by TMDb.
-            </p>
-            <p class="footer-links">
-              <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">Visit TMDb</a>
-              <span class="separator">•</span>
-              <a href="https://www.themoviedb.org/documentation/api" target="_blank" rel="noopener">API Documentation</a>
-            </p>
-          </div>
-
-          <div class="footer-actions">
-            <button class="footer-btn" id="scroll-to-top" type="button">
-              <i class="fas fa-arrow-up"></i>
-              Back to Top
-            </button>
-          </div>
-        </div>
         <div class="footer-bottom">
-          <p>&copy; <span id="current-year"></span> CineScope Movie App. Created for educational purposes.</p>
+            © <span id="current-year"></span> CineScope
         </div>
-      </footer>
+    </footer>
 
-      <!-- Toast Notification -->
-      <div id="toast" class="toast hidden">
-        <div class="toast-content">
-          <i class="fas fa-info-circle"></i>
-          <span id="toast-message"></span>
-        </div>
-      </div>
 
-      <!-- Quick View Modal -->
-      <div id="quick-view-modal" class="modal hidden">
+    <!-- Movie Modal -->
+    <div id="quick-view-modal" class="modal hidden">
         <div class="modal-overlay"></div>
         <div class="modal-container">
-          <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal" type="button">
-              <i class="fas fa-times"></i>
+            <button type="button" class="modal-close" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
             </button>
 
+            <!-- Loading -->
             <div id="modal-loading" class="modal-loading">
-              <div class="loading-spinner"></div>
-              <p>Loading movie details...</p>
+                <div class="spinner"></div>
+                <p>Loading movie details...</p>
             </div>
 
-            <div id="modal-content" class="hidden">
-              <div class="modal-poster-section">
-                <img id="modal-poster" class="modal-poster" src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1450" alt="Movie poster">
-                <div class="modal-rating">
-                  <div id="modal-rating-circle" class="rating-circle">
-                    <span id="modal-rating-value">0.0</span>
-                  </div>
-                  <p class="modal-vote-count"><span id="modal-vote-count">0</span> votes</p>
-                </div>
-              </div>
 
-              <div class="modal-details">
-                <h2 id="modal-title" class="modal-title">Movie Title</h2>
-
-                <div class="modal-meta">
-                  <div class="modal-meta-item">
-                    <i class="fas fa-calendar"></i>
-                    <span id="modal-release-date">N/A</span>
-                  </div>
-                  <div class="modal-meta-item">
-                    <i class="fas fa-language"></i>
-                    <span id="modal-language">N/A</span>
-                  </div>
-                  <div class="modal-meta-item">
-                    <i class="fas fa-clock"></i>
-                    <span id="modal-runtime">N/A</span>
-                  </div>
+            <!-- Content -->
+            <div id="modal-content" class="modal-content hidden">
+                <div class="modal-poster-wrapper">
+                    <img id="modal-poster" class="modal-poster" src="" alt="Movie poster">
                 </div>
 
-                <div class="modal-genres" id="modal-genres"></div>
 
-                <div class="modal-overview-section">
-                  <h3>Overview</h3>
-                  <p id="modal-overview" class="modal-overview"></p>
-                </div>
+                <div class="modal-details">
+                    <div class="modal-rating">
+                        <span id="modal-rating-value">0.0</span>
+                        <small>
+                            / 10
+                        </small>
+                    </div>
 
-                <div class="modal-actions">
-                  <a id="modal-tmdb-link" class="btn-primary modal-action-btn" href="https://www.themoviedb.org/" target="_blank" rel="noopener">
-                    <i class="fas fa-external-link-alt"></i>
-                    View on TMDb
-                  </a>
+                    <h2 id="modal-title">
+                        Movie Title
+                    </h2>
+
+                    <div class="modal-meta">
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            <span id="modal-release-date">N/A</span>
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-language"></i>
+                            <span id="modal-language">N/A</span>
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            <span id="modal-runtime">N/A</span>
+                        </span>
+                    </div>
+
+
+                    <div id="modal-genres" class="modal-genres"></div>
+                    <h3>Overview</h3>
+                    <p id="modal-overview" class="modal-overview"></p>
+                    <a id="modal-tmdb-link" class="primary-btn" href="#" target="_blank" rel="noopener">
+                        View on TMDb
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
-              </div>
             </div>
 
+
+            <!-- Error -->
             <div id="modal-error" class="modal-error hidden">
-              <i class="fas fa-exclamation-circle"></i>
-              <h3>Failed to load movie details</h3>
-              <p>Please try again later.</p>
-              <button class="btn-primary modal-retry-btn" type="button">Retry</button>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <h3>Something went wrong</h3>
+                <p>
+                    We couldn't load the movie details.
+                </p>
+                <button type="button" class="primary-btn modal-retry-btn">
+                    Try Again
+                </button>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
