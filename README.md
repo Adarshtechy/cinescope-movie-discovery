@@ -98,9 +98,9 @@ Movie Details Modal
 
 ## 🚀 Getting Started
 1. Clone the Repository
-   ```bash
-   git clone https://github.com/Adarshtechy/cinescope-movie-discovery.git
-   ```
+```bash
+git clone https://github.com/Adarshtechy/cinescope-movie-discovery.git
+```
 2. Open the Project
 
 Navigate to the project directory:
